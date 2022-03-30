@@ -1,0 +1,6 @@
+*.csv
+*.zip
+*/__pycache__/
+sql/src/
+sql/mysql
+venv/
