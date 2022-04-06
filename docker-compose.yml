@@ -4,12 +4,12 @@ services:
   
   db:
     image: mysql
-    #restart: always
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: sakila
+      MYSQL_DATABASE: ENOE
     ports:
       - "3307:3306"
     volumes:
       - ./sql/src:/usr/src
-      - ./sql/mysql:/var/lib/mysql
+      #- ./sql/mysql:/var/lib/mysql
