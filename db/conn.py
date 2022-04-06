@@ -56,6 +56,21 @@ class mysql_conn:
         query = f'INSERT INTO {table}_{trim}({colums}) VALUES ({params})'
         return query
 
+    def schema_db(self, table, trim):
+        """
+        Recibe de parametro un dataframe y lo inserta en la base de datos 
+        """
+
+        table_query = table_const.get_table_query(table, trim)
+
+        conn = self.init_conn()
+        cursor = conn.cursor()
+
+        cursor.execute(table_query)
+        conn.commit()
+
+        conn.close()
+
     def populate_db(self, table, df):
         """
         Recibe de parametro un dataframe y lo inserta en la base de datos 
